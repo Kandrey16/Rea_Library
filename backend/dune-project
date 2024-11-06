@@ -1,0 +1,9 @@
+(lang dune 3.6)
+
+(name realibrary-server)
+
+(generate_opam_files true)
+
+(package
+ (name realibrary-server)
+ (depends ocaml dune))
