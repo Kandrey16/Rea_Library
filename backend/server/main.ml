@@ -25,6 +25,14 @@ module Routes (Repo : Repository.S) = struct
     | Some account_id ->
         Entities.Account.yojson_of_t account_id
         |> Yojson.Safe.to_string |> Dream.json
+
+  let pick_book req =
+    let user_id = Dream.query req "user_id" |> Option.get |> int_of_string in
+    let book_id = Dream.query req "book_id" |> Option.get |> int_of_string in
+
+    Repo.pick_book ~user_id ~book_id;%lwt
+
+    Dream.json "\"OK\""
 end
 
 let () =
@@ -41,4 +49,5 @@ let () =
             get "/books/recent" Routes.recent_books;
             get "/books/:id" Routes.book_by_id;
             get "/accounts/:id" Routes.account_by_id;
+            post "/pick" Routes.pick_book;
           ])

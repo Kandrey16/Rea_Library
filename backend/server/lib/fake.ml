@@ -23,4 +23,14 @@ let generate_fake_data (module Repo : Repository.S) =
         role = Librarian;
       };%lwt
 
+  Repo.create_account
+    Entities.Account.
+      {
+        first_name = "Pizd2a";
+        second_name = "lo2x";
+        email = "";
+        password = "efe2wfwe";
+        role = Reader;
+      };%lwt
+
   Lwt.return_unit

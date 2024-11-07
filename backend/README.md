@@ -8,6 +8,8 @@ GET /books/:id
 GET /books/recent
 
 GET /accounts/:id
+
+POST /pick?user_id={id}&book_id={id}
 ```
 
 ## Как собрать?
