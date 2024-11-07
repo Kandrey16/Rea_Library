@@ -32,25 +32,13 @@ let () =
   let module Repo = Repository.Make_mock () in
   let module Routes = Routes (Repo) in
   Lwt_main.run
-    (Repo.add_book
-       Entities.Book.
-         {
-           title = "";
-           instances = 201;
-           quantity = 10;
-           pages = 200;
-           publisher = "";
-           published_year = 2012;
-           authors = [];
-           description = "";
-           id = 100;
-         };%lwt
+    (Fake.generate_fake_data (module Repo);%lwt
 
      serve @@ logger
      @@ router
           [
             get "/" Routes.index;
-            get "/books/:id" Routes.book_by_id;
             get "/books/recent" Routes.recent_books;
+            get "/books/:id" Routes.book_by_id;
             get "/accounts/:id" Routes.account_by_id;
           ])
