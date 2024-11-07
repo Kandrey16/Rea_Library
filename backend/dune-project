@@ -6,4 +6,4 @@
 
 (package
  (name realibrary-server)
- (depends ocaml dune dream))
+ (depends ocaml dune dream caqti-lwt))

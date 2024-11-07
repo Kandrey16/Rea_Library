@@ -4,6 +4,7 @@ depends: [
   "ocaml"
   "dune" {>= "3.6"}
   "dream"
+  "caqti-lwt"
   "odoc" {with-doc}
 ]
 build: [
