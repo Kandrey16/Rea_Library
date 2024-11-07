@@ -1,4 +1,6 @@
 (executable
  (name main)
  (public_name realibrary-server)
- (libraries dream))
+ (libraries server dream)
+ (preprocess
+  (pps lwt_ppx)))

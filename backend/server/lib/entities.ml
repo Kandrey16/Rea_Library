@@ -24,7 +24,5 @@ module Account = struct
     role : role; [@default Reader]
   }
 
-  and role = Reader | Librarian
+  and role = Reader | Librarian [@@deriving yojson]
 end
-
-

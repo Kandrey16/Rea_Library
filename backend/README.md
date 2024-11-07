@@ -1,5 +1,19 @@
 # realibrary-server
 
+### API
+
+```http
+
+# Получить книгу по её ID
+GET /books/:id
+
+# Получить недавно добавленные книги
+GET /books/recent
+
+# Получить инфу о юзере по ID
+GET /accounts/:id
+```
+
 ### Как собрать?
 
 Требуется:
