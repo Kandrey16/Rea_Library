@@ -1,20 +1,16 @@
 # realibrary-server
 
-### API
+## API
 
 ```http
-
-# Получить книгу по её ID
 GET /books/:id
 
-# Получить недавно добавленные книги
 GET /books/recent
 
-# Получить инфу о юзере по ID
 GET /accounts/:id
 ```
 
-### Как собрать?
+## Как собрать?
 
 Требуется:
 - Установленный [OCaml] (версии >= 4.14)
@@ -25,8 +21,7 @@ GET /accounts/:id
 $ opam switch create . --deps-only
 ```
 
-### Запустить
-
+Запустить:
 ```console
 $ dune exec realibrary-server
 ```
